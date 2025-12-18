@@ -1,0 +1,57 @@
+[
+  {
+    "id": "pmjay",
+    "name": "Pradhan Mantri Jan Arogya Yojana",
+    "state": "ALL",
+    "min_age": 0,
+    "max_age": 75,
+    "income_max": 250000,
+    "category": "BPL",
+    "description": "Health insurance scheme for poor and vulnerable families.",
+    "apply_url": "https://pmjay.gov.in/"
+  },
+  {
+    "id": "pmkisan",
+    "name": "PM Kisan Samman Nidhi",
+    "state": "ALL",
+    "min_age": 18,
+    "max_age": 80,
+    "income_max": 600000,
+    "category": "FARMER",
+    "description": "Income support scheme for small and marginal farmers.",
+    "apply_url": "https://pmkisan.gov.in/"
+  },
+  {
+    "id": "pmay",
+    "name": "Pradhan Mantri Awas Yojana - Urban",
+    "state": "ALL",
+    "min_age": 18,
+    "max_age": 80,
+    "income_max": 600000,
+    "category": "URBAN_POOR",
+    "description": "Affordable housing scheme for urban poor households.",
+    "apply_url": "https://pmay-urban.gov.in/"
+  },
+  {
+    "id": "nsp_scholarship",
+    "name": "National Scholarship Portal – Central Sector",
+    "state": "ALL",
+    "min_age": 17,
+    "max_age": 25,
+    "income_max": 450000,
+    "category": "STUDENT",
+    "description": "Scholarship for meritorious students from low income families.",
+    "apply_url": "https://scholarships.gov.in/"
+  },
+  {
+    "id": "widow_pension",
+    "name": "Indira Gandhi Widow Pension Scheme",
+    "state": "ALL",
+    "min_age": 40,
+    "max_age": 79,
+    "income_max": 300000,
+    "category": "WIDOW",
+    "description": "Monthly pension support for eligible widows.",
+    "apply_url": "https://nsap.nic.in/"
+  }
+]

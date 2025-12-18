@@ -1,0 +1,54 @@
+[
+  {
+    "scenario": "Successful Match",
+    "user_profile": {
+      "age": 25,
+      "income": 40000,
+      "state": "Andhra Pradesh",
+      "category": "FARMER"
+    },
+    "conversation": [
+      "User: నాకు 25 సంవత్సరాలు. నేను రైతును. ఆంధ్ర ప్రదేశ్ నుండి. నా ఆదాయం 40000 రూపాయలు సంవత్సరానికి.",
+      "Tool: get_schemes_tool\nResult: - ID: pmkisan, Name: PM Kisan Samman Nidhi, Description: Income support scheme for small and marginal farmers., Apply: https://pmkisan.gov.in/",
+      "Tool: check_eligibility_tool\nResult: The user IS eligible for PM Kisan Samman Nidhi because their details satisfy the scheme rules.",
+      "Agent: మీరు PM Kisan Samman Nidhi పథకానికి అర్హులు. ఈ పథకం చిన్న మరియు సరిహద్దు రైతులకు ఆదాయ మద్దతు అందిస్తుంది. దరఖాస్తు చేయడానికి pmkisan.gov.in సందర్శించండి."
+    ],
+    "outcome": "SUCCESS - User found eligible scheme"
+  },
+  {
+    "scenario": "No Match",
+    "user_profile": {
+      "age": 40,
+      "income": 800000,
+      "state": "Karnataka",
+      "category": "GENERAL"
+    },
+    "conversation": [
+      "User: నాకు 40 సంవత్సరాలు. నా ఆదాయం 800000 రూపాయలు సంవత్సరానికి. కర్ణాటక నుండి.",
+      "Tool: get_schemes_tool\nResult: No schemes found for the given details. Ask the user to confirm or adjust their information.",
+      "Agent: క్షమించండి, మీ ఆదాయం స్థాయి చాలా ఎక్కువగా ఉంది. ప్రస్తుతం అందుబాటులో ఉన్న సంక్షేమ పథకాలు తక్కువ ఆదాయ కుటుంబాలకు మాత్రమే. మీ సమాచారం సరైనదేనా నిర్ధారించగలరా?"
+    ],
+    "outcome": "NO_MATCH - Explained reason and asked for confirmation"
+  },
+  {
+    "scenario": "Contradiction Handling",
+    "initial_profile": {
+      "age": 30,
+      "category": "STUDENT"
+    },
+    "updated_profile": {
+      "age": 65,
+      "income": 100000,
+      "state": "Telangana",
+      "category": "SENIOR_CITIZEN"
+    },
+    "conversation": [
+      "User: నాకు 30 సంవత్సరాలు. నేను విద్యార్థిని.",
+      "Agent: అర్థమైంది. మీ రాష్ట్రం మరియు ఆదాయం గురించి చెప్పగలరా?",
+      "User: క్షమించండి, నా వయస్సు 65 సంవత్సరాలు. నేను పదవీ విరమణ చేసాను. తెలంగాణ నుండి. నా ఆదాయం 100000 రూపాయలు.",
+      "Agent: అర్థమైంది. మీ వయస్సు 65 సంవత్సరాలుగా నవీకరించాను. పదవీ విరమణ చేసిన వారికి ప్రత్యేక పథకాలు ఉన్నాయి.",
+      "Tool: get_schemes_tool (with updated profile)\nResult: No schemes found for the given details. Ask the user to confirm or adjust their information."
+    ],
+    "outcome": "SUCCESS - Detected change, updated profile, re-evaluated"
+  }
+]
